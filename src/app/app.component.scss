@@ -1,0 +1,37 @@
+.bgImg {
+  background-image: url('https://truth.bahamut.com.tw/s01/202111/45b93a77034a533ce54f914c3b473f83.JPG');
+  background-size: cover;
+  color: #df2b8b;
+  padding-top: 5px;
+  width: 98.5vw;
+}
+
+
+.locationBnt {
+  width: 160px;
+	height: 40px;
+	background-image: linear-gradient(135deg, #6555a0 0%, #578aef 55%, #8f41e9 100% );
+	border-radius: 20px;
+	border:none;
+  margin-right: 8px;
+	color:white;
+	font-size: 19px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+
+.elementDataDiv {
+  width: 400px;
+	height: 75%;
+  border-radius: 20px;
+  border: 3px solid #888888;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  padding: 4px;
+  display: inline-flex;
+  background-color: #ff8800;
+  color: #085d4f;
+  text-align: left;
+  font-size: 19px;
+}

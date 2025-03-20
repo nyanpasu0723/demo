@@ -1,0 +1,55 @@
+<h1 class="word"></h1>
+<div class="bgImg">
+  <h1 style="text-align: center;">{{ resData?.records.Locations[0].DatasetDescription }}</h1>
+  @for(location of resData?.records.Locations[0].Location; track $index) {
+  <button class="locationBnt" (click)="changeLocation(location)">
+    {{ location.LocationName }}
+  </button>
+  }
+  <br>
+  <br>
+  @for(weatherElement of chooseLocation?.WeatherElement; track $index) {
+  <button class="locationBnt" (click)="changeElement(weatherElement)">
+    {{ weatherElement.ElementName }}
+  </button>
+  }
+  <br>
+  <h1 style="text-align: center;">{{ resData?.records.Locations[0].LocationsName }}{{ chooseLocationName }}的{{ chooseElement }}</h1>
+
+  <div style="text-align: center;">
+    @for (elementData of chooseElementData?.Time; track $index) {
+    <div class="elementDataDiv">
+      @if (elementData.DataTime) {
+      時間：{{ elementData.DataTime | date:'yyyy-MM-dd hh:mm:ss' }}
+      } @else if (elementData.StartTime) {
+      開始時間：{{ elementData.StartTime | date:'yyyy-MM-dd hh:mm:ss' }}
+      <br>
+      結束時間：{{ elementData.EndTime | date:'yyyy-MM-dd hh:mm:ss' }}
+      }
+      <br>
+      @if (elementData.ElementValue[0].Temperature) {
+      溫度：{{ elementData.ElementValue[0].Temperature }}
+      } @else if (elementData.ElementValue[0].DewPoint) {
+      露點溫度：{{ elementData.ElementValue[0].DewPoint }}
+      } @else if (elementData.ElementValue[0].RelativeHumidity) {
+      相對濕度：{{ elementData.ElementValue[0].RelativeHumidity }}
+      } @else if (elementData.ElementValue[0].ApparentTemperature) {
+      體感溫度：{{ elementData.ElementValue[0].ApparentTemperature }}
+      } @else if (elementData.ElementValue[0].ComfortIndexDescription) {
+      舒適度指數：{{ elementData.ElementValue[0].ComfortIndexDescription }}
+      } @else if (elementData.ElementValue[0].BeaufortScale) {
+      蒲福風級：{{ elementData.ElementValue[0].BeaufortScale }}
+      風速：{{ elementData.ElementValue[0].WindSpeed }}
+      } @else if (elementData.ElementValue[0].WindDirection) {
+      風向：{{ elementData.ElementValue[0].WindDirection }}
+      } @else if (elementData.ElementValue[0].ProbabilityOfPrecipitation) {
+      3小時降雨機率：{{ elementData.ElementValue[0].ProbabilityOfPrecipitation }}
+      } @else if (elementData.ElementValue[0].Weather) {
+      天氣現象：{{ elementData.ElementValue[0].Weather }}
+      } @else if (elementData.ElementValue[0].WeatherDescription) {
+      天氣預報綜合描述：{{ elementData.ElementValue[0].WeatherDescription }}
+      }
+    </div>
+    }
+  </div>
+</div>
